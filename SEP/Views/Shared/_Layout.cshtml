@@ -1,0 +1,294 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Google Font -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Allerta+Stencil:400,700,900:normal" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <!-- Plugins CSS -->
+    <link href="~/Content/assets/css/normalize.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/assets/css/animate.css" type="text/css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link href="~/Content/assets/css/style.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/assets/css/responsive.css" type="text/css" rel="stylesheet" />
+    <!-- icons -->
+    <link href="~/Content/assets/css/iline-icons.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/assets/css/magnific-popup.css" type="text/css" rel="stylesheet" />
+
+    
+    <!-- Shortcut icon -->
+    <link rel="shortcut icon" href="~/Content/assets/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <!-- NAVIGATION START -->
+
+    @RenderSection("Navigation")
+    
+    
+
+
+
+    <!-- NAVIGATION END -->
+    <style type="text/css">
+        .clear {
+            clear: both;
+        }
+
+        article {
+            float: left;
+            margin: 0 auto;
+            width: 50%;
+            height: auto;
+            padding: 4%;
+        }
+
+        aside {
+            float: right;
+            margin: 0 auto;
+            width: 35%;
+            height: auto;
+            padding: 3%;
+        }
+
+        .sec {
+            width: 50%;
+            float: left;
+            margin: 2% 2%;
+            text-align: center;
+        }
+         .sec1 {
+            width: 29%;
+			float:left;
+			margin: 2% 2%;
+			text-align: center;
+				
+        }
+
+        .l-homeAppPromotion .search-takeaways-boxed .search-takeaways-large {
+            padding: 0;
+        }
+
+        .l-homeAppPromotion .search-takeaways-boxed .search-takeaways-large {
+            margin-bottom: 50px;
+        }
+
+        .l-homeAppPromotion .search-takeaways-boxed .search-takeaways-large {
+            margin-bottom: 70px;
+        }
+
+        .l-homeAppPromotion .search-takeaways-boxed .search-takeaways-large {
+            margin: 0 auto 20px;
+            padding: 0;
+        }
+
+        .search-takeaways-boxed .search-takeaways-large {
+            padding: 15px 10px 10px 110px;
+        }
+
+        .search-takeaways {
+            display: inline-block;
+            align: center;
+            padding-top: 190px;
+        }
+
+        .search-takeaways-boxed .search-takeaways-large {
+            margin: -15px 10px 45px;
+            padding: 15px 52px 0;
+        }
+
+        .search-takeaways {
+            background-color: transparent;
+            text-align: left;
+        }
+
+        .search-takeaways-boxed .search-takeaways-large {
+            margin: -10px 10px 15px;
+            padding: 5px 10px 10px 10px;
+            background-color: #ce0b10;
+        }
+
+        .search-takeaways-large {
+            height: 104px;
+            height: 10.4rem;
+        }
+
+        .ctaButton, .ctaButtonHome, .ctaButtonHeader, .ctaButtonBasket {
+            display: inline-block;
+            box-sizing: border-box;
+            height: 44px;
+            width: 100%;
+            border: none;
+            max-width: 300px;
+            padding: 14px 28px;
+            vertical-align: middle;
+            font-weight: bold;
+            line-height: 1;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #fec752;
+            color: #333 !important;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -o-border-radius: 2px;
+            -ms-border-radius: 2px;
+            border-radius: 2px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-appearance: none;
+        }
+
+        .search-takeaways-boxed input.error {
+            border-color: #f3d4d5;
+        }
+
+        .l-homeAppPromotion .text-large {
+            border-radius: 3px;
+        }
+
+        .l-homeAppPromotion .postcode {
+            height: 44px;
+            height: 4.4rem;
+            border: none;
+            padding: 7px 10px;
+            text-transform: uppercase;
+        }
+
+        .text.error {
+            border-color: #eb1c24;
+        }
+
+        .cover .postcode {
+            font-size: 14px;
+        }
+
+        .text-large {
+            height: 44px;
+            padding: 7px 6px;
+            font-size: 16px;
+            font-size: 1.6rem;
+            background-clip: padding-box;
+            border-radius: 2px;
+        }
+
+        .l-size1of4 {
+            width: 187px;
+        }
+
+        .cover .search-takeaways .l-col {
+            float: left;
+            margin: 0 5px;
+        }
+
+        .cover .postcodeField {
+            margin-bottom: 15px;
+        }
+
+        .l-size1of4 {
+            width: 220px;
+        }
+
+        .l-size1of4 {
+            width: 166px;
+        }
+
+        .l-col {
+            float: left;
+        }
+
+        .l-col {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .o-opinion-labs {
+            max-width: 960px;
+            margin: 20px auto;
+            margin-top: 20px;
+            margin-right: auto;
+            margin-bottom: 20px;
+            margin-left: auto;
+        }
+        .o-opinion-labs {
+    clear: both;
+    display: block;
+    width: auto;
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+    display: block;
+margin: 0;
+padding: 0;
+}
+    </style>
+
+    <div class="main-content">
+
+        @RenderBody()
+    </div>
+
+
+
+    <div class="modal fade" id="confirmDelete" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Delete Parmanently</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure about this ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirm">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("foo")
+ 
+ 
+    <!-- FOOTER END -->
+    <!-- End Footer -->
+    
+    <!-- MAIN CONTAINER END -->
+    <!-- Back to top -->
+    <div id="back-to-top" class="back-to-top">
+        <a href="#" class="icon iline2-thin16 no-margin"></a>
+    </div>
+    <!-- Back to top end -->
+    <!-- Plugins JS -->
+    <script src="~/Content/assets/js/libs/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/libs/jqBootstrapValidation.js"></script>
+    <script src="~/Content/assets/js/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/assets/js/libs/imagesloaded.js"></script>
+    <script src="~/Content/assets/js/libs/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/assets/js/libs/isotope.pkgd.min.js"></script>
+    <script src="~/Content/assets/js/libs/ParallaxScrolling.js"></script>
+    <script src="~/Content/assets/js/libs/jquery.mailchimp.js"></script>
+    <script src="~/Content/assets/js/libs/wow.min.js"></script>
+    <script src="~/Content/assets/js/libs/jquery.fittext.js"></script>
+    <script src="~/Content/assets/js/libs/jquery.lettering.js"></script>
+    <script src="~/Content/assets/js/libs/jquery.textillate.js"></script>
+
+    <!-- Main JS -->
+    <script src="~/Content/assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

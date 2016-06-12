@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section Navigation{
+
+<header class="fallone-navbar" data-id="default-navbar">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="~/Content/assets/images/logo.png" alt="Takeaway logo" class="img-responsive" />
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">@Html.ActionLink("Home", "Index") </li>
+                    <li><a href="">My account</a></li>
+                    <li><a href="">Contact us</a></li>
+                    <li>@Html.ActionLink("Sign Up", "Signup") </li>
+                </ul>
+
+
+                @Html.Partial("_LoginPartial")
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+</header>
+
+}
+
+
+
+
+<section class="slider-content">
+    <!-- .container -->
+    <div class="container">
+        <!-- .row -->
+        <div class="row">
+            <!-- .col-md-12 -->
+            <div class="col-md-12">
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-xs-12 no-padding">
+                        <div id="main-carousel" class="carousel slide" data-ride="carousel">
+
+
+                            <div class="container">
+
+                                <section class="sec">
+                                    <h1>
+                                        <span class="caption-head"><span class="text-success"></span> <span class="text-primary"></span></span>
+                                    </h1>
+                                    <p class="text-center"></p>
+
+                                    <div class="search-takeaways search-takeaways-large">
+                                        <form action="" method="post" class="validate" novalidate="novalidate">
+                                            <div class="l-col l-size1of4 postcodeField">
+                                                <input name="where" id="where" placeholder="Enter postcode" data-no-postcode-entered-message="Please enter a postcode" data-required-message="This field is required" data-no-restaurants-message="Sorry, there are no restaurants delivering to this area" data-pattern="^\s*([A-z]{1,2}[ ]?[0-9]{1,2}[A-z]?[ ]*[0-9][A-z]{2})\s*$" data-pattern-message="Please enter a full, valid postcode" class="text text-large input-full postcode error" role="textbox" data-enable-autocomplete="False" type="text">
+                                            </div>
+                                            <div class="l-col l-size1of3">
+                                                <input class="ctaButtonHome" id="btnSearch" value="Find takeaways" type="submit">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </section>
+
+
+                                <aside>
+
+                                    <div class="home-map"><object type="image/svg+xml" data="~/Content/map.svg"></object></div>
+                                </aside>
+
+                            </div>
+
+                            <div class="slider-inner">
+                                <div class="boxed">
+                                    <h1 class="text-primary wow fadeInDown text-uppercase" data-wow-duration="1.8s" data-wow-delay=".2s">Order takeaways online</h1>
+                                    <span class="line-sep-green"></span>
+                                    <h3 class="text-white text-uppercase wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                                        Choose from all over the <span class="text-success">Sri lanka</span>!
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+
+
+@section foo{
+<footer class="page-footer">
+    <div class="container">
+        <!-- .row -->
+        <div class="row">
+            <!-- .col-md-12 -->
+            <div class="col-md-12">
+                <!-- .row -->
+                <div class="row">
+                    <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+                        <p> <a href="">Sign in</a><br /></p>
+                        <p><a href="#article-editor" data-toggle="modal">Sign up</a><br /></p>
+                        <p> @Html.ActionLink("Page Feedback", "SendFeedbackEmail", new { controller = "User" }, new { target = "_blank" })</p>
+                    </aside>
+                    <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+                        <!-- Copyright Informations -->
+                        <h3 class="uppercase">Copyright</h3>
+                        <span class="line-sep-gray"></span>
+                        <p>
+                            2014-2015 Appdevfolio All right reserved
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+
+                        </p>
+                    </aside>
+                    <aside class="col-md-4 col-sm-6 col-xs-12">
+                        <h3 class="uppercase">Visit Us</h3>
+                        <span class="line-sep-gray"></span>
+                        <!-- address -->
+                        <address>
+                            <strong>Appdevfolio</strong><br />
+                            Pariser Platz, App. 600<br />
+                            Berlin, GE 10117<br />
+                            (+49) 123-456-789<br />
+                            <a href="mailto:#">info@appdevfolio.com</a><br />
+                            <a href="mailto:#">support@appdevfolio.com</a><br />
+
+
+                        </address>
+                        <!-- /address -->
+                    </aside>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12 text-center mar-top-sm">
+                        <!-- .social -->
+                        <!-- /.social -->
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</footer>
+}
+
+

@@ -1,0 +1,327 @@
+﻿@model SEP.Models.editUser
+
+@section Navigation{
+<header class="fallone-navbar" data-id="default-navbar">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="~/Content/assets/images/logo.png" alt="Takeaway logo" class="img-responsive" />
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index") </li>
+                   
+                    <li><a href="">Contact us</a></li>
+                    <li>@Html.ActionLink("Sign Up", "Signup") </li>
+                </ul>
+
+
+                @Html.Partial("_LoginPartial")
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+</header>
+
+
+    
+    }
+
+
+<!-- HEADER TREE -->
+<section class="header-tree" data-speed="8" data-type="background">
+    <h2 class="hidden">Header tree</h2>
+    <!-- parallax background -->
+    <div class="cover-1" data-type="sprite" data-offsetY="-700" data-Xposition="50%" data-speed="-2"></div>
+    <!-- .container -->
+    <div class="container">
+        <!-- .row -->
+        <div class="row">
+            <!-- .col-md-12 -->
+            <div class="col-md-12">
+                <ul class="breadcrumb clearfix mar-top-3x">
+                    <li><a class="link text-success" href="/">Home</a></li>
+
+                    <li><a class="link" href="#">My Account</a></li>
+                </ul>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- HEADER TREE END -->
+
+
+<div class="portlet-body" style="width:350px; float:inherit; padding:10px; width: 90%; margin: 0 auto; ">
+
+    <div class="page-content-inner">
+        <div class="profile">
+            <div class="tabbable-line tabbable-full-width">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab_1_1" data-toggle="tab"> Overview </a>
+                    </li>
+                    <li>
+                        <a href="#tab_1_3" data-toggle="tab"> Account </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1_1">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <ul class="list-unstyled profile-nav">
+                                    <li>
+                                        @if (Model.ProfPic != null)
+                                        {
+                                            <img src="data:image/png;base64,@Convert.ToBase64String(Model.ProfPic, 0, Model.ProfPic.Length)" width="200" height="100" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Content/propic.png" width="300" height="250"/>
+                                        }
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row">
+                                   
+                                        
+
+                                    @if (TempData["Sucess"] != null)
+                                    {
+                                    <div class="alert alert-success">
+                                        @TempData["Sucess"]
+                                    </div>
+                                    }
+
+                                    
+                                    @if (ViewData["Exception"] != null)
+                                    {
+                                    <div class="alert alert-danger">
+                                        @ViewData["Exception"]
+                                    </div>
+                                    }
+                                 
+
+                                        <div class="col-md-8 profile-info">
+                                            <h1 class="font-green sbold uppercase">@Model.Fname</h1>
+
+                                            <p>
+                                                <a href="javascript:;"> @Model.Email</a>
+                                            </p>
+                                            <ul class="list-inline">
+                                               
+
+                                                   
+                                                    <li>
+                                                        <i class="fa fa-map-marker"></i>
+                                                        @Model.Address,@Model.PostalCode
+                                                    </li>
+                                                   
+
+                                                </ul>
+                                            </div>
+                                            <!--end col-md-8-->
+                                            <div class="col-md-4">
+                                                <div class="portlet sale-summary">
+
+                                                </div>
+                                            </div>
+                                            <!--end col-md-4-->
+                                        </div>
+                                        <!--end row-->
+                                        <div class="tabbable-line tabbable-custom-profile">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="tab_1_11">
+                                                    <div class="portlet-body">
+
+                                                    </div>
+                                                </div>
+                                                <!--tab-pane-->
+                                                <div class="tab-pane" id="tab_1_22">
+                                                    <div class="tab-pane active" id="tab_1_1_1">
+
+                                                    </div>
+                                                </div>
+                                                <!--tab-pane-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <script type="text/javascript">
+
+                        function popup(){
+                          cuteLittleWindow = window.open("@Url.Action("editpassword", "User" ,new {Id=Model.UserId})", "littleWindow", "location=no,width=909,height=423");
+                        }
+
+
+                        function popuppic(){
+                            cuteLittleWindow = window.open("@Url.Action("saveimage", "User" ,new {Id=Model.UserId})", "littleWindow", "location=no,width=909,height=423");
+                        }
+
+                    </script>
+                            <!--tab_1_2-->
+                            <div class="tab-pane" id="tab_1_3">
+                                <div class="row profile-account">
+                                    <div class="col-md-3">
+                                        <ul class="ver-inline-menu tabbable margin-bottom-10 ">
+                                            <li class="active">
+                                                <a data-toggle="tab" href="#tab_1-1">
+                                                    <i class="fa fa-cog"></i> Personal info
+                                                </a>
+                                                <span class="after"> </span>
+                                            </li>
+                                           
+                                            <li>
+                                                <a href="javascript:popup()">Change Password</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:popuppic()">Change Profile Picture</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="tab-content">
+                                            <div id="tab_1-1" class="tab-pane active">
+                                                <form role="form" method="post" action="">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                                 
+                                                    <input type="hidden" name="UserId" value="@Model.UserId" />
+
+                     
+
+                                                    <div class="form-group">
+                                                        <label class="control-label">First Name</label>
+                                                        <input type="text" class="form-control" id="Fname" name="Fname" value="@Model.Fname" />
+                                                        @Html.ValidationMessageFor(model => model.Fname)
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Last Name</label>
+                                                        <input type="text" class="form-control" id="Lname" name="Lname" value="@Model.Lname" />
+                                                        @Html.ValidationMessageFor(model => model.Lname)
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Username</label>
+                                                        <input type="text" class="form-control"  id="Username" name="Username" value="@Model.Username" />
+                                                        @Html.ValidationMessageFor(model => model.Username)
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">E-Mail</label>
+                                                        <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" />
+                                                        @Html.ValidationMessageFor(model => model.Email)
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Address</label>
+                                                        <input type="text" class="form-control" id="Address" name="Address" value="@Model.Address" />
+                                                        @Html.ValidationMessageFor(model => model.Address)
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Postal Code</label>
+                                                        <input type="text" class="form-control" id="PostalCode" name="PostalCode" value="@Model.PostalCode" />
+                                                        @Html.ValidationMessageFor(model => model.PostalCode)
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Phone</label>
+                                                        <input type="text" class="form-control" id="Phonenumber" name="Phonenumber" value="@Model.Phonenumber" />
+                                                        @Html.ValidationMessageFor(model => model.Phonenumber)
+                                                    </div>
+                                                    
+                            
+                                                    <div class="margiv-top-10">
+                                                        <button type="submit" class="btn green" id="btnSubmit">
+                                                            Update Details
+                                                        </button>
+                                                    </div>
+
+                                    }  </form>
+
+                                            </div>
+                                          
+                                            
+
+                                                </div>
+                                            </div>
+                                            <!--end col-md-9-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+@section foo{
+<footer class="page-footer">
+    <div class="container">
+        <!-- .row -->
+        <div class="row">
+            <!-- .col-md-12 -->
+            <div class="col-md-12">
+                <!-- .row -->
+                <div class="row">
+                    <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+                        <p> <a href="">Sign in</a><br /></p>
+                        <p><a href="#article-editor" data-toggle="modal">Sign up</a><br /></p>
+                        <p> @Html.ActionLink("Page Feedback", "SendFeedbackEmail", new { controller = "User" }, new { target = "_blank" })</p>
+                    </aside>
+                    <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+                        <!-- Copyright Informations -->
+                        <h3 class="uppercase">Copyright</h3>
+                        <span class="line-sep-gray"></span>
+                        <p>
+                            2014-2015 Appdevfolio All right reserved
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+
+                        </p>
+                    </aside>
+                    <aside class="col-md-4 col-sm-6 col-xs-12">
+                        <h3 class="uppercase">Visit Us</h3>
+                        <span class="line-sep-gray"></span>
+                        <!-- address -->
+                        <address>
+                            <strong>Appdevfolio</strong><br />
+                            Pariser Platz, App. 600<br />
+                            Berlin, GE 10117<br />
+                            (+49) 123-456-789<br />
+                            <a href="mailto:#">info@appdevfolio.com</a><br />
+                            <a href="mailto:#">support@appdevfolio.com</a><br />
+
+
+                        </address>
+                        <!-- /address -->
+                    </aside>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12 text-center mar-top-sm">
+                        <!-- .social -->
+                        <!-- /.social -->
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</footer>
+}

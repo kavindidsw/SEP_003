@@ -1,0 +1,53 @@
+﻿
+
+
+@if (Session["UserId"] != null)
+{
+
+    if (Session["Username"].ToString() != "admin"|| Session["Username"].ToString() != "ADMIN")
+    {
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@Session["Username"].ToString()<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+
+                <li> @Html.ActionLink("Account", "Edituserinfo", "User", new { id = @Session["UserId"].ToString() }, null)</li>
+                <li><a href="@Url.Action("Logout", "User")">Log out</a></li>
+                
+                
+
+
+            </ul>
+        </li>
+    </ul>
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@Session["Username"].ToString()<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+
+                    <li> @Html.ActionLink("Account", "Edituserinfo", "Admin", new { id = @Session["UserId"].ToString() }, null)</li>
+                    <li><a href="@Url.Action("Logout", "Admin")">Log out</a></li>
+
+
+
+
+                </ul>
+            </li>
+        </ul>
+
+    }
+
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            @Html.ActionLink("Sign In", "SignIn","User")
+           
+        </li>
+    </ul>
+}

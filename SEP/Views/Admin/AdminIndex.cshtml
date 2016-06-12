@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+
+@section Navigation{
+
+    <header class="fallone-navbar" data-id="default-navbar">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="~/Content/assets/images/logo.png" alt="Takeaway logo" class="img-responsive" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="@Url.Action("AdminIndex", "Admin")">Admin Home</a></li>
+
+                        
+                    </ul>
+
+
+                    @Html.Partial("_LoginPartial")
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+    </header>
+
+}
+
+
+<div class="container">
+    <h1 id="h1.-bootstrap-heading-secondary-text">Admin<small>Dashboard</small><a class="anchorjs-link" href="#h1.-bootstrap-heading-secondary-text">
+        <span class="anchorjs-icon"></span></a></h1>
+ 
+    @if (ViewData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @ViewData["Success"]
+        </div>
+    }
+    @if (ViewData["Exception"] != null)
+    {
+        <div class="alert alert-success">
+            @ViewData["Exception"]
+        </div>
+    }
+
+    
+
+    <a class="btn btn-lg btn-primary" href="@Url.Action("ViewUsers", "Admin")"><i class="iline2-id1"></i>View Users</a>
+    <a class="btn btn-lg btn-success" href="@Url.Action("ViewRestaurants", "Admin")"><i class="iline2-two114"></i> View Restaurants</a>
+    <a class="btn btn-lg btn-primary" href="@Url.Action("Backup", "Admin")"><i class="iline2-document56"></i> Backup Database</a>
+    <a class="btn btn-lg btn-primary" href="@Url.Action("ViewLoginhistory", "Admin")"><i class="iline2-document56"></i> View Login History</a>
+
+    
+
+</div>
+
+
+
+
+
+@section foo{
+    
+}
+
+

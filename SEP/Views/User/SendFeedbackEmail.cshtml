@@ -1,0 +1,116 @@
+﻿@model SEP.Models.clsSendFeedback
+
+@section Navigation{
+
+
+    <header class="fallone-navbar" data-id="default-navbar">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="~/Content/assets/images/logo.png" alt="Takeaway logo" class="img-responsive" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">@Html.ActionLink("Home", "Index") </li>
+                        <li>@Html.ActionLink("Sign Up", "Signup") </li>
+                    </ul>
+
+
+                    @Html.Partial("_LoginPartial")
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+    </header>
+
+}
+
+
+<div class="container">
+    <div class="portlet-body" style="width:350px; float:inherit; padding:10px;padding-top:50px; width: 90%; margin: 0 auto; ">
+
+        <div class="alert-danger">
+            @ViewData["Suceess"]
+        </div>
+
+        @if (ViewData["Exception"] != null)
+        {
+            <div class="alert alert-danger">
+                @ViewData["Exception"]
+            </div>
+        }
+
+        @using (Html.BeginForm("SendFeedbackEmail", "User", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken();
+
+
+            <div class="form-group">
+                <label class="control-label">Please Enter your Rating</label>
+                @Html.DropDownList("Rate", new List<SelectListItem> {
+
+                             new SelectListItem { Text = "1", Value = "1" },
+                             new SelectListItem { Text = "2", Value = "2" },
+                             new SelectListItem { Text = "3", Value = "3" },
+                             new SelectListItem { Text = "4", Value = "4" },
+                             new SelectListItem { Text = "5", Value = "5" },
+                             new SelectListItem { Text = "6", Value = "6" },
+                             new SelectListItem { Text = "7", Value = "7" },
+                             new SelectListItem { Text = "8", Value = "8" },
+                             new SelectListItem { Text = "9", Value = "9" },
+                             new SelectListItem { Text = "10", Value = "10" },
+                               }, "What is your rating ? 1-10")
+            </div>
+
+
+
+            
+
+            <div class="form-group">
+                <label class="control-label">Feedback Type</label>
+                @Html.DropDownList("Feedbacktype", new List<SelectListItem> {
+
+                             new SelectListItem { Text = "An Order I'ved Placed", Value = "An Order I'ved Placed" },
+                             new SelectListItem { Text = "An Issue with the website", Value = "An Issue with the website" },
+                             new SelectListItem { Text = "I have Suggestion", Value = "I have Suggestion" },
+                             new SelectListItem { Text = "I have Compliment", Value = "I have Compliment" },
+                             new SelectListItem { Text = "Restaurant Reviews", Value = "Restaurant Reviews" },
+                             new SelectListItem { Text = "other", Value = "other" },
+
+                               }, "What's Your Feedback about?")
+            </div>
+
+                
+
+                <div class="form-group">
+                    <label class="control-label">Enter your Text</label>
+                    @Html.EditorFor(model => model.feedbacktext, new { htmlAttributes = new { @class = "form-control input-lg" } })
+                    @Html.ValidationMessageFor(model => model.feedbacktext, "", new { @class = "text-danger" })
+                </div>
+
+            
+                <div style="padding-left:450px;">
+
+                    <button type="submit" class="btn btn-lg btn-info"><span class="menu-icon"><i class="fa fa-fw fa-check"></i></span> Send Feedback</button>
+                </div>
+
+
+            
+
+        }
+        </div>
+    </div>
+
+        @section foo{}
+
+

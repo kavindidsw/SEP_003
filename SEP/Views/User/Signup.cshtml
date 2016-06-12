@@ -1,0 +1,159 @@
+﻿@model SEP.Models.User
+
+@section Navigation{
+
+    <header class="fallone-navbar" data-id="default-navbar">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="~/Content/assets/images/logo.png" alt="Takeaway logo" class="img-responsive" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index") </li>
+                        <li><a href="">My account</a></li>
+                        <li><a href="">Contact us</a></li>
+                        <li  class="active">@Html.ActionLink("Sign Up", "Signup") </li>
+                    </ul>
+
+
+                    @Html.Partial("_LoginPartial")
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+    </header>
+
+}
+
+
+       <!-- SIGN UP SECTION -->
+<section class="text-white">
+    <div class="cover-4"></div>
+    <!-- .container -->
+    <div class="container">
+        <!-- .row -->
+        <div class="row">
+            <!-- .col-md-12 -->
+            <div class="col-md-12">
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-8 col-lg-offset-8 mar-bottom-md">
+                        <h1 class="text-uppercase text-primary wow fadeInDown text-center" data-wow-duration=".8s" data-wow-delay=".2s">Take a tour</h1>
+                        <p class="text-center">
+                            <i class="text-muted text-capitalize">The best designs for you.</i>
+                        </p>
+                        <div class="text-center">
+                            <span class="separator">
+                                <i class="icon icon-small iline2-lock22 text-primary no-margin"></i>
+                            </span>
+                        </div>
+                        <p class="wow fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".3s">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore.
+                        </p>
+                        <form action="" method="post" class="mar-top-lg error wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s" novalidate="" name="signupForm">
+                            <!-- .form-group -->
+                @using (Html.BeginForm())
+            {
+                             <div class="form-group control-group">
+                                <input id="Fname" type="text" class="input-lg" name="Fname" placeholder="First Name* :" />
+
+                                <p class="help-block"></p>
+                                 @Html.ValidationMessageFor(model => model.Fname)
+                            </div>
+                            <!-- .form-group -->
+                            <div class="form-group control-group">
+                                <input id="Lname" type="text" class="input-lg" value="" name="Lname" placeholder="Last Name* :"  />
+                                @Html.ValidationMessageFor(model => model.Lname)
+                                <p class="help-block"></p>
+                            </div>
+
+                            <div class="form-group control-group">
+                                <input id="Username" type="text" class="input-lg" value="" name="Username" placeholder="Username* :" />
+                                @Html.ValidationMessageFor(model => model.Username)
+                                <p class="help-block"></p>
+                            </div>
+                            <div class="form-group control-group">
+                                <input id="Address" type="text" class="input-lg" value="" name="Address" placeholder="Address :" />
+                                @Html.ValidationMessageFor(model => model.Address)
+                                <p class="help-block"></p>
+                            </div>
+                            <div class="form-group control-group">
+                                <input id="PostalCode" type="text" class="input-lg" value="" name="PostalCode" placeholder="PostalCode :" />
+                                @Html.ValidationMessageFor(model => model.PostalCode)
+                                <p class="help-block"> </p>
+                            </div>
+                            <div class="form-group control-group">
+                                <input id="Phonenumber" type="text" class="input-lg" value="" name="Phonenumber" placeholder="Phonenumber :"  />
+                                @Html.ValidationMessageFor(model => model.Phonenumber)
+                                <p class="help-block"></p>
+                            </div>
+                            <!-- .form-group -->
+                    <div class="form-group control-group">
+                        <input id="Nic" type="text" class="input-lg" value="" name="Nic" placeholder="Nic :"  />
+                        @Html.ValidationMessageFor(model => model.Nic)
+                        <p class="help-block"></p>
+                    </div>
+                            <!-- .form-group -->
+                    <div class="form-group control-group">
+                        <input id="Email" type="text" class="input-lg" value="" name="Email" placeholder="Email :"  />
+                        @Html.ValidationMessageFor(model => model.Email)
+                        <p class="help-block"></p>
+                    </div>
+                            <!-- .form-group -->
+                    <div class="form-group control-group">
+                        <input id="Password" type="password" class="input-lg" value="" name="Password" placeholder="Password:" />
+                        @Html.ValidationMessageFor(model => model.Password)
+                        <p class="help-block"></p>
+                    </div>
+                            <!-- .form-group -->
+                    <div class="form-group control-group">
+                        <input id="ConfirmPassword" type="password" class="input-lg" value="" name="ConfirmPassword" placeholder="ConfirmPassword:" />
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                        <p class="help-block"></p>
+                    </div>
+
+                            <div class="checkbox control-group">
+                                <label>
+                                    <input type="checkbox" name="termofcondition" id="termofcondition" /> I agree to the terms and conditions.
+                                </label>
+                                <p class="mar-top-lg text-white text-center">
+                                    By clicking Sign Up, you agree to our Terms and that you
+                                    have read our Data Policy, including our Cookie Use.
+                                </p>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-full btn-lg">Sign Up</button>
+}</form>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- SIGN UP SECTION END -->
+
+@section foo{}
+
+
+   
+    
+    
+
+
+
+

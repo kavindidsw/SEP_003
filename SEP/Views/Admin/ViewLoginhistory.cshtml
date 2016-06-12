@@ -1,0 +1,96 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<SEP.Models.LoginHistory>
+
+@section Navigation{
+
+    <header class="fallone-navbar" data-id="default-navbar">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="~/Content/assets/images/logo.png" alt="Takeaway logo" class="img-responsive" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="@Url.Action("AdminIndex", "Admin")">Admin Home</a></li>
+
+
+                    </ul>
+
+
+                    @Html.Partial("_LoginPartial")
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+    </header>
+
+}
+
+<div class="container">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+    @if (TempData["Exception"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Exception"]
+        </div>
+    }
+
+    <br />
+
+    <table class="table table-striped table-bordered table-hover table-checkable order-column"
+           id="sample_1">
+        <thead>
+            <tr>
+                <th> Username</th>
+                <th> Login Data</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                
+
+                    <tr class="odd gradeX" id="getdelete">
+                        <td>@Html.DisplayFor(modelItem => item.Username)</td>
+                        <td> @Html.DisplayFor(modelItem => item.Loggeddate)</td>
+
+                    </tr>
+                
+            }
+
+        </tbody>
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.Action("ViewRestaurants", new { page }))
+
+    <div>
+        @Html.ActionLink("Back to Panel", "AdminIndex")
+    </div>
+
+</div>
+
+
+
+
+@section foo{
+
+}

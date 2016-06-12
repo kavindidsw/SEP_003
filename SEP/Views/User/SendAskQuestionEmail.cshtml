@@ -1,0 +1,152 @@
+﻿@model SEP.Models.clsAskquestion
+
+@{
+    ViewBag.Title = "";
+}
+
+@section Navigation{
+    <header class="fallone-navbar" data-id="default-navbar">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="~/Content/assets/images/logo.png" alt="Takeaway logo" class="img-responsive" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index") </li>
+                        <li>@Html.ActionLink("Sign Up", "Signup") </li>
+                    </ul>
+
+
+                    @Html.Partial("_LoginPartial")
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+    </header>
+
+
+
+}
+
+<div class="container">
+    <div class="portlet-body" style="width:350px; float:inherit; padding:10px;padding-top:50px; width: 90%; margin: 0 auto; ">
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4></h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.emailaddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.emailaddress, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.emailaddress, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.order, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.order, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.order, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.reason, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.reason, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.reason, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.questionText, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.questionText, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.questionText, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn green" id="btnSubmit">
+                            Email me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        </div>
+    </div>
+        @section foo{
+            <footer class="page-footer">
+                <div class="container">
+                    <!-- .row -->
+                    <div class="row">
+                        <!-- .col-md-12 -->
+                        <div class="col-md-12">
+                            <!-- .row -->
+                            <div class="row">
+                                <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+                                    <p> <a href="">Sign in</a><br /></p>
+                                    <p><a href="#article-editor" data-toggle="modal">Sign up</a><br /></p>
+                                    <p> @Html.ActionLink("Page Feedback", "SendFeedbackEmail", new { controller = "User" }, new { target = "_blank" })</p>
+                                </aside>
+                                <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+                                    <!-- Copyright Informations -->
+                                    <h3 class="uppercase">Copyright</h3>
+                                    <span class="line-sep-gray"></span>
+                                    <p>
+                                        2014-2015 Appdevfolio All right reserved
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+
+                                    </p>
+                                </aside>
+                                <aside class="col-md-4 col-sm-6 col-xs-12">
+                                    <h3 class="uppercase">Visit Us</h3>
+                                    <span class="line-sep-gray"></span>
+                                    <!-- address -->
+                                    <address>
+                                        <strong>Appdevfolio</strong><br />
+                                        Pariser Platz, App. 600<br />
+                                        Berlin, GE 10117<br />
+                                        (+49) 123-456-789<br />
+                                        <a href="mailto:#">info@appdevfolio.com</a><br />
+                                        <a href="mailto:#">support@appdevfolio.com</a><br />
+
+
+                                    </address>
+                                    <!-- /address -->
+                                </aside>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-md-12 text-center mar-top-sm">
+                                    <!-- .social -->
+                                    <!-- /.social -->
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+            </footer>
+        }
